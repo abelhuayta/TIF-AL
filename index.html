@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicación de Matrices en Videojuegos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Contenedor del motor 3D -->
+    <div id="game-container"></div>
+
+    <!-- Panel Educativo -->
+    <div id="info-panel">
+        <h2>Aplicación de Matrices</h2>
+        <p><strong>¿Qué representa la matriz?</strong><br>
+        Es un plano cartesiano discreto. Cada celda $(i, j)$ es una coordenada en el mundo 3D.</p>
+        <p><strong>Generación de objetos:</strong><br>
+        El algoritmo lee cada valor numérico y renderiza un cubo, esfera o grupo 3D según el ID.</p>
+        <p><strong>Movimiento y estado:</strong><br>
+        Al presionar <i>W A S D</i>, la posición en la matriz se sobrescribe. El modelo 3D solo refleja lo que dicta la matriz de datos.</p>
+        <p><strong>Colisiones:</strong><br>
+        El código verifica si <code>matriz[fila][columna]</code> contiene un objeto sólido (1, 5 o 6) antes de permitir el movimiento.</p>
+    </div>
+
+    <!-- Panel de visualización de la matriz en tiempo real -->
+    <div id="matrix-panel">
+        <h3>Matriz en Tiempo Real</h3>
+        <div id="matrix-display"></div>
+        <p class="hint">Usa W A S D o Flechas para moverte</p>
+    </div>
+
+    <!-- Scripts clásicos de Three.js para evitar problemas de CORS al abrir archivos locales -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    
+    <!-- Script principal del juego -->
+    <script src="script.js"></script>
+</body>
+</html>
